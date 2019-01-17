@@ -7,6 +7,15 @@
     <title>Document</title>
 </head>
 <body>
+
+    <form action="results.php" method="get">
+    Apor: <input type="number" name="numberOfMonkeys"><br>
+    Giraffer: <input type="number" name="numberOfGiraffes"><br>
+    Tigrar: <input type="number" name="numberOfTigers"><br>
+    Kokosnötter: <input type="number" name="numberOfCocos"><br>
+    <input type="submit">
+    </form>
+    
     <?php
     
     
