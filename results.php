@@ -17,24 +17,30 @@ There are/is <?php echo $_GET["numberOfCocos"]; ?> coco(s)<br>
 <?php
 
 abstract class Animal {
+    protected $name;
+
+    function __construct($name) {
+        $this->name = $name;
+    }
+
     abstract function makeSound();
 }
 
 class Monkey extends Animal {
-    function makeSound() {
-        echo "<script type='text/javascript'>alert('mak-mak');</script>";
+    public function makeSound() {
+        return $this->name." says mak-mak";
     }
 }
 
 class Tiger extends Animal {
-    function makeSound() {
-        echo "<script type='text/javascript'>alert('wáááááá');</script>";
+    public function makeSound() {
+        return $this->name." says wááááááá";
     }
 }
 
 class Giraffe extends Animal {
-    function makeSound() {
-        echo "<script type='text/javascript'>alert('i am a giraffe');</script>";
+    public function makeSound() {
+        return $this->name." says i am a giraffe";
     }
 }
 
@@ -47,17 +53,20 @@ class Coco {
 <?php
 
 for ($i = 0; $i < $_GET["numberOfMonkeys"]; $i++) {
-    echo "<img src='img/monkey.png'/>\n";
+    $monkey = new Monkey($i."monkey");
+    echo "<img src='img/monkey.png' onclick='alert(\"".$monkey->makeSound()."\")'/>\n";
 }
 
 
 for ($i = 0; $i < $_GET["numberOfGiraffes"]; $i++) {
-    echo "<img src='img/giraffe.png'/>\n";
+    $giraffe = new Giraffe($i."giraffe");
+    echo "<img src='img/giraffe.png' onclick='alert(\"".$giraffe->makeSound()."\")'/>\n";
 }
 
 
 for ($i = 0; $i < $_GET["numberOfTigers"]; $i++) {
-    echo "<img src='img/tiger.png'/>\n";
+    $tiger = new Tiger($i."tiger");
+    echo "<img src='img/tiger.png' onclick='alert(\"".$tiger->makeSound()."\")'/>\n";
 }
 
 
