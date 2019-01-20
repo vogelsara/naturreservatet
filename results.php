@@ -50,6 +50,21 @@ for ($i = 0; $i < $_GET["numberOfMonkeys"]; $i++) {
     echo "<img src='img/monkey.png'/>\n";
 }
 
+
+for ($i = 0; $i < $_GET["numberOfGiraffes"]; $i++) {
+    echo "<img src='img/giraffe.png'/>\n";
+}
+
+
+for ($i = 0; $i < $_GET["numberOfTigers"]; $i++) {
+    echo "<img src='img/tiger.png'/>\n";
+}
+
+
+for ($i = 0; $i < $_GET["numberOfCocos"]; $i++) {
+    echo "<img src='img/coco.png'/>\n";
+}
+
 ?>
 
 </body>
